@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Player
+</title>
+</head>
+<body>
+	<p>Hello! What is your name?</p>
+	<input type="text" id="myText" placeholder = "Name goes here">
+	<button onclick= "myFunction()">Submit</button> 
+	<p id="demo"></p> <!--where I save space for myFunction to stay in the document -->
+	<input type="text" id="yesNo" placeholder = "Answer goes here">
+	<button onclick= "conFunction()">Submit</button>
+	<p id="nemo"></p>
+
+	<script>
+	var answer;
+	var playerName;
+	var accept = false;	
+		function myFunction() {
+		playerName= document.getElementById("myText").value;// storing the user input and displaying it in myText
+
+		document.getElementById("demo").innerHTML = "Welcome, " + playerName +". Do you want to play a game? Type Yes if you do, or type No to quit. Then press submit";
+		}
+
+		function conFunction() {
+		answer= document.getElementById("yesNo").value;
+		
+		//test***document.getElementById("nemo").innerHTML = playerName + " said " + answer + " .";
+		}
+		
+			while (accept== false){
+			if (answer == 'yes'|| answer == 'YES'|| answer == 'Yes'){
+			document.getElementById("nemo").innerHTML = "Lets Play, " + playerName;
+			accept=true;
+			} 
+			if(answer == 'no'|| answer == 'No'|| answer == 'NO'){
+			document.getElementById("nemo").innerHTML = "Goodbye, " + playerName;
+			accept=true;
+			}
+		}
+	</script>
+</body>
+</html>
